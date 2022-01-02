@@ -3,6 +3,7 @@ package com.demo.simplynote.entities;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @NoArgsConstructor @AllArgsConstructor @Getter @Setter @Builder
@@ -21,4 +22,7 @@ public class User {
 
     @Column(name = "email", nullable = false)
     private String email;
+
+    @OneToMany
+    private Set<Note> notes;
 }
